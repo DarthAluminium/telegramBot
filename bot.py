@@ -1,7 +1,7 @@
 import telebot
 import re
 
-BOT_TOKEN = "746029790:AAFEt8hf7hMJ2JyeCrY7xRHsgLl-13M5WQo"
+
 WEEK_DAYS = ('ПОНЕДЕЛЬНИК', 'ВТОРНИК', 'СРЕДА', 'ЧЕТВЕРГ', 'ПЯТНИЦА', 'СУББОТА', 'ВОСКРЕСЕНЬЕ')
 HASHTAG_VALIDATOR = re.compile(r"\s*(#([a-zA-Z0-9А-я]+)(?:_(\w+))?)\s*$")
 # [1]: весь хештег без пробелов     [2]: первое слово до "_"     [3]: все слова после "_"
