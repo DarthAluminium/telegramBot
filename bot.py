@@ -6,7 +6,9 @@ WEEK_DAYS = ('ПОНЕДЕЛЬНИК', 'ВТОРНИК', 'СРЕДА', 'ЧЕТВ
 HASHTAG_VALIDATOR = re.compile(r"\s*(#([a-zA-Z0-9А-я]+)(?:_(\w+))?)\s*$")
 # [1]: весь хештег без пробелов     [2]: первое слово до "_"     [3]: все слова после "_"
 
+
 bot = telebot.TeleBot(BOT_TOKEN)
+
 
 def format_message(text):
     lines = text.split('\n')
@@ -44,5 +46,7 @@ def format_hw_msg_all(msg):
         if f_text:
 	      bot.edit_message_text(f_text, parse_mode = 'Markdown')
 
-
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+	bot.reply_to(message, "Howdy, how are you doing?"
 bot.polling()
