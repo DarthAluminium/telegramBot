@@ -54,7 +54,7 @@ if name == 'main':
     bot.polling(none_stop=True)'''
 import requests
 import datetime
-import conf
+import token
 import telebot
 
 class Msk(datetime.tzinfo):
@@ -64,7 +64,7 @@ class Msk(datetime.tzinfo):
     def dst(self, dt):
         return datetime.timedelta(0)
 
-bot = telebot.TeleBot(conf.token)
+bot = telebot.TeleBot(token.BOT_TOKEN)
 
 def sleep(h, m, s):
     try:
